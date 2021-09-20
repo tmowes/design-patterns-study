@@ -1,0 +1,225 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:radar/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "radar",
+    "10x",
+    "@typescript-eslint",
+    "prettier",
+    "import-helpers"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 98,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "semi": false
+      }
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "implicit-arrow-linebreak": "off",
+    "camelcase": "off",
+    "class-methods-use-this": "off",
+    "no-useless-constructor": "off",
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "no-unused-expressions": "off",
+    "no-use-before-define": "off",
+    "no-unneeded-ternary": "error",
+    "no-unused-vars": "off",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsForRegex": [
+          "^draft"
+        ]
+      }
+    ],
+    "no-shadow": "off",
+    "prefer-template": "error",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_$|[iI]gnored"
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ],
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "assert": "either"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "import/no-duplicates": "off",
+    "import/no-named-as-default": "off",
+    "import/no-useless-path-segments": [
+      "error",
+      {
+        "noUselessIndex": true
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/test.ts?(x)",
+          "**/*.test.ts?(x)",
+          "**/spec.ts?(x)",
+          "**/*.spec.ts?(x)",
+          "**/stories.ts?(x)",
+          "**/*.stories.ts?(x)",
+          "**/mocks/**/*",
+          "**/utils/tests/**/*"
+        ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          [
+            "/^next/"
+          ],
+          "module",
+          [
+            "/^@(assets|common|components|constants|contexts|hooks|mocks|pages|routes|services|styles|utils|shared|store)/",
+            "/^~/"
+          ],
+          [
+            "parent",
+            "sibling"
+          ],
+          "index"
+        ],
+        "alphabetize": {
+          "order": "ignore",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "import/no-anonymous-default-export": [
+      "error",
+      {
+        "allowArray": true,
+        "allowArrowFunction": false,
+        "allowAnonymousClass": false,
+        "allowAnonymousFunction": false,
+        "allowCallExpression": true,
+        "allowLiteral": true,
+        "allowObject": true
+      }
+    ],
+    "10x/no-full-import": "error",
+    "10x/auto-import": [
+      "error",
+      {
+        "imports": {
+          "fs": "import fs from 'fs'",
+          "path": "import path from 'path'",
+          "styled": "import styled from 'styled-components'",
+          "View": "import { View } from 'react-native'",
+          "Text": "import { Text } from 'react-native'",
+          "Image": "import { Image } from 'react-native'",
+          "TextInput": "import { TextInput } from 'react-native'",
+          "ScrollView": "import { ScrollView } from 'react-native'",
+          "StyleSheet": "import { StyleSheet } from 'react-native'",
+          "TouchableOpacity": "import { TouchableOpacity } from 'react-native'",
+          "TouchableWithoutFeedback": "import { TouchableWithoutFeedback } from 'react-native'",
+          "TouchableHighlight": "import { TouchableHighlight } from 'react-native'",
+          "ActivityIndicator": "import { ActivityIndicator } from 'react-native'",
+          "lighten": "import { lighten } from 'polished'",
+          "darken": "import { darken } from 'polished'",
+          "Animated": "import Animated from 'react-native-reanimated'",
+          "getWeeksInMonth": "import { getWeeksInMonth } from 'date-fns'",
+          "startOfMonth": "import { startOfMonth } from 'date-fns'",
+          "getDaysInMonth": "import { getDaysInMonth } from 'date-fns'",
+          "getISODay": "import { getISODay } from 'date-fns'",
+          "format": "import { format } from 'date-fns'",
+          "getWeek": "import { getWeek } from 'date-fns'",
+          "setDate": "import { setDate } from 'date-fns'",
+          "endOfWeek": "import { endOfWeek } from 'date-fns'",
+          "startOfWeek": "import { startOfWeek } from 'date-fns'",
+          "useRef": "import { useRef } from 'react'",
+          "useEffect": "import { useEffect } from 'react'",
+          "useState": "import { useState } from 'react'",
+          "useCallback": "import { useCallback } from 'react'",
+          "useMemo": "import { useMemo } from 'react'",
+          "useReducer": "import { useReducer } from 'react'",
+          "Fragment": "import { Fragment } from 'react'",
+          "useQuery": "import { useQuery } from 'react-query'",
+          "useMutation": "import { useMutation } from 'react-query'"
+        }
+      }
+    ]
+  }
+}
